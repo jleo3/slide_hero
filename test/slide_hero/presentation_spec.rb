@@ -23,6 +23,12 @@ module SlideHero
       pres.slides.count.must_equal 1
     end
 
+    it "takes a slide with alternate syntax" do
+      pres = Presentation.new("slides") do
+        slide "My slide" {}
+      end
+    end
+
     it "adds defaults to slides" do
       pres = Presentation.new("slides with defaults") do
         defaults headline_size: :small
